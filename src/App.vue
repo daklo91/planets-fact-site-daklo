@@ -1,25 +1,41 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container">
+    <HeaderComponent />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
+
+<script>
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import data from "@/assets/data.json";
+
+export default {
+  data() {
+    return {
+      data: data,
+    };
+  },
+  components: {
+    HeaderComponent,
+  },
+};
+</script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Antonio&family=Spartan&display=swap");
 
-$background-color: #070724;
-$primary-color: #fff;
-$secondary-color: #838391;
-$hover-color: #38384f;
-
-$headline-font-family: "Antonio", sans-serif;
-$text-font-family: "Spartan", sans-serif;
-
 * {
   background-color: $background-color;
   color: $primary-color;
+}
+
+.container {
+  width: 375px;
+  margin: auto;
 }
 
 #app {
