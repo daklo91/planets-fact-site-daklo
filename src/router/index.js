@@ -1,20 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Mercury from "../views/Mercury.vue";
+import Venus from "../views/Venus.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    redirect: "/mercury",
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/mercury",
+    name: "Mercury",
+    component: Mercury,
+  },
+  {
+    path: "/venus",
+    name: "Venus",
+    component: Venus,
   },
 ];
 
